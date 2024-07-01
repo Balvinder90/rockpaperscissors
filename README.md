@@ -6,8 +6,8 @@
 
 1. HTML
 2. SCSS
-3. BEM CONVENTION
-4. FIGMA
-5. TYPESCRIPT
-6. JAVASCRIPT
+3. BEM Convention
+4. Figma
+5. TypeScript
+6. JavaScript
 
