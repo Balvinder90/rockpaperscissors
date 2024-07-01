@@ -1,0 +1,350 @@
+// CSS Variables
+$white: #ffffff;
+$dark-grey: #4f4f4f;
+$blue: #6495ed;
+$red: #ed6464;
+$green: #51bf71;
+$font-primary: "Candal";
+
+// Base Styles
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+
+html {
+  font-size: 62.5%;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: $font-primary;
+  background-color: $white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  position: relative;
+  z-index: 20;
+  padding: 2rem;
+}
+
+body::before {
+  content: "";
+  background-image: url("../img/bg.webp");
+  background-size: cover;
+  background-position: center;
+  position: absolute;
+  top: 0rem;
+  right: 0rem;
+  bottom: 0rem;
+  left: 0rem;
+  opacity: 0.15;
+  z-index: -10;
+}
+
+// Main Styles
+.blue-text {
+  color: $blue;
+}
+
+.red-text {
+  color: $red;
+}
+
+.green-text {
+  color: $green;
+}
+
+.hide {
+  opacity: 0;
+}
+
+.scale-down {
+  transform: scale(0);
+}
+
+@keyframes float {
+  0% {
+    transform: translatey(0rem);
+  }
+  25% {
+    transform: translatey(-1.5rem);
+  }
+  50% {
+    transform: translatey(0rem);
+  }
+  75% {
+    transform: translatey(-1.5rem);
+  }
+  100% {
+    transform: translatey(0rem);
+  }
+}
+
+.move {
+  animation: float 0.6s;
+}
+
+.game {
+  &__container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10rem;
+  }
+
+  &__heading {
+    font-size: 4.7rem;
+    font-family: "Candal", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    color: $dark-grey;
+    transition: 0.6s all;
+  }
+
+  &__ui {
+    display: flex;
+    align-items: center;
+    gap: 14rem;
+
+    &-player-score {
+      background-color: $red;
+      transition: all 0.3s;
+    }
+
+    &-cpu-score {
+      background-color: $blue;
+      transition: all 0.3s;
+    }
+
+    &-player,
+    &-cpu {
+      display: flex;
+      align-items: center;
+      flex-direction: column;
+      gap: 4rem;
+
+      &-heading {
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        align-items: center;
+        gap: 1.4rem;
+        font-size: 2.6rem;
+        font-family: "Candal", sans-serif;
+        text-align: center;
+        font-weight: 400;
+        font-style: normal;
+        color: $dark-grey;
+      }
+
+      &-score {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: $white;
+        height: 47px;
+        width: 47px;
+        border-radius: 50%;
+      }
+    }
+
+    &-icon-0,
+    &-icon-1 {
+      transition: 0.6s all;
+    }
+
+    &-icon-fist {
+      transition: 0.5s;
+      width: 11rem;
+      height: 15.5rem;
+      transition: 0.6s all;
+    }
+  }
+
+  &__buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 4rem;
+    transition: 0.6s all;
+
+    &-btn {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 11rem;
+      height: 11rem;
+      border-radius: 50%;
+      border: 0.3rem solid $dark-grey;
+      outline: none;
+      background-color: $dark-grey;
+      transition: all 0.5s;
+
+      &:hover {
+        cursor: pointer;
+        background-color: transparent;
+      }
+
+      &:hover &-icon {
+        filter: brightness(35%);
+      }
+
+      &-icon {
+        width: 4.9rem;
+        height: 4.9rem;
+        transition: all 0.5s;
+      }
+    }
+  }
+}
+
+// Media Queries
+@media only screen and (max-width: 56.25em) {
+  .game {
+    &__container {
+      gap: 7rem;
+    }
+
+    &__heading {
+      font-size: 3.7rem;
+    }
+
+    &__ui {
+      display: flex;
+      align-items: center;
+      gap: 9.5rem;
+
+      &-player,
+      &-cpu {
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        gap: 3rem;
+
+        &-heading {
+          font-size: 2.3rem;
+        }
+      }
+
+      &-icon-fist {
+        width: 9rem;
+        height: 13.5rem;
+      }
+    }
+
+    &__buttons {
+      gap: 4rem;
+
+      &-btn {
+        width: 9rem;
+        height: 9rem;
+
+        &-icon {
+          width: 4.4rem;
+          height: 4.4rem;
+        }
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 41.625em) {
+  .game {
+    &__container {
+      gap: 6rem;
+    }
+
+    &__heading {
+      font-size: 3rem;
+    }
+
+    &__ui {
+      display: flex;
+      align-items: center;
+      gap: 6.5rem;
+
+      &-player,
+      &-cpu {
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        gap: 3rem;
+
+        &-heading {
+          font-size: 2rem;
+        }
+      }
+
+      &-icon-fist {
+        width: 7rem;
+        height: 11.5rem;
+      }
+    }
+
+    &__buttons {
+      gap: 3rem;
+
+      &-btn {
+        width: 7.7rem;
+        height: 7.7rem;
+
+        &-icon {
+          width: 3.85rem;
+          height: 3.85rem;
+        }
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 33.75em) {
+  .game {
+    &__container {
+      gap: 5rem;
+    }
+
+    &__heading {
+      font-size: 2.5rem;
+    }
+
+    &__ui {
+      display: flex;
+      align-items: center;
+      gap: 4.5rem;
+
+      &-player,
+      &-cpu {
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        gap: 3rem;
+
+        &-heading {
+          font-size: 1.8rem;
+        }
+      }
+
+      &-icon-fist {
+        width: 6rem;
+        height: 10.5rem;
+      }
+    }
+
+    &__buttons {
+      gap: 3rem;
+
+      &-btn {
+        width: 7.7rem;
+        height: 7.7rem;
+
+        &-icon {
+          width: 3.85rem;
+          height: 3.85rem;
+        }
+      }
+    }
+  }
+}
