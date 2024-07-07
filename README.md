@@ -2,7 +2,7 @@
 
 ### Rock Paper Scissors game built in HTML, CSS and TypeScript.
 
-#### https://balvindersinghportfolio.netlify.app/sites/rps/
+#### Link -  https://balvindersinghportfolio.netlify.app/sites/rps/
 
 #### What was used to build the game
 
