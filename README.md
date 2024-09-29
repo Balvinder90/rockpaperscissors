@@ -2,7 +2,9 @@
 
 ### Rock Paper Scissors game built in HTML, CSS and TypeScript.
 
-#### Link -  https://balvindersinghportfolio.netlify.app/sites/rps/
+#### Vanilla JS Version Link - https://balvindersinghportfolio.netlify.app/sites/rps/
+
+#### React Version Link - https://github.com/Balvinder90/rockpaperscissors-reactversion
 
 #### What was used to build the game
 
